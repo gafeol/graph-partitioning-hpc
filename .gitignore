@@ -1,4 +1,5 @@
 code/meshpart/*
 !code/meshpart/USIinertpart.m
 !code/meshpart/USIspecpart.m
-
+code/PartitioningMeshes/*
+code/tools/*
