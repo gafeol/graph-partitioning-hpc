@@ -21,14 +21,7 @@ if nargin < 2
 end;
 picture = 1;
 
-disp(' ');
-disp(' HPC 2018 course:   ');
-disp(' Implement your own spectral partitioning  ');
-disp(' ');
 
-
-
-% <<<<This code is just a dummy implementation to generate a partitioning
 n = size(A,1);
 %L = laplacian(A);
 u2 = fiedler(A);
@@ -43,12 +36,13 @@ end
  
 [part1, part2] = other(map);
 % TODO: Return the separating edges
-
-gplotpart(A,xy,part1);
-
+if picture
+    clf reset;
+    gplotpart(A,xy,part1);
+    title('Spectral Partition using the Fiedler Eigenvector');
+end
 %map = zeros(n,1);
 %map(1:round((n/2))) = 0; map((round((n/2))+1):n) = 1;
 %[p1,p2] = other(map);
 %gplotpart(A,xy,p1);
-title('Spectral Partition (dummy) using the Fiedler Eigenvector');
 % <<<<This code is just a dummy implementation to generate a partitioning

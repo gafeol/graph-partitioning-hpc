@@ -15,11 +15,6 @@ if nargin < 3
 end;
 [n,d] = size(xy);
 
-disp(' ');
-disp(' HPC 2018 course:   ');
-disp(' Implement your own inertial bisection partitioning  ');
-disp(' ');
-
 xm = 0;
 ym = 0;
 for i = 1:n
@@ -46,7 +41,9 @@ ort = [-eigv(2), eigv(1)];
 ort = ort/norm(ort);
 
 p = partition(xy,ort);
-gplotpart(A,xy,p);
-title('Inertial Partition (dummy)');
-disp(' Here we will generate a dummy partitioning ...');
+if picture
+   clf reset;
+   gplotpart(A,xy,p);
+   title('Inertial Partition');
+end
 % <<<<This code is just a dummy implementation to generate a partitioning
